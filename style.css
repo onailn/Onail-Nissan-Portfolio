@@ -71,7 +71,7 @@ body {
   color: #444;
 }
 
-/* Profile photo (optional) */
+/* Profile photo */
 .profile-photo {
   width: 140px;
   height: 140px;
@@ -79,4 +79,35 @@ body {
   border-radius: 50%;
   margin-bottom: 20px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Link Buttons (below profile/title) */
+.links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.links a {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 10px 20px;
+  border-radius: 8px;
+  background: #333;
+  color: #fff;
+  transition: background 0.3s ease;
+}
+
+.links a:hover {
+  background: #555;
+}
+
+/* Optional: make links horizontal on desktop */
+@media (min-width: 600px) {
+  .links {
+    flex-direction: row;
+  }
 }

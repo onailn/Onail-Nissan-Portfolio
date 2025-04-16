@@ -1,3 +1,18 @@
+/* Reset and Base */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #fafafa;
+  color: #333;
+  min-height: 100vh;
+}
+
+/* NAVBAR */
 .navbar {
   position: fixed;
   top: 0;
@@ -35,4 +50,52 @@
 
 .nav-links a:hover {
   background-color: #e0e0e0;
+}
+
+/* Responsive nav */
+.icon {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 600px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: #fafafa;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100%;
+    padding: 20px 0;
+  }
+
+  .nav-links.responsive {
+    display: flex;
+  }
+
+  .icon {
+    display: block;
+  }
+}
+
+/* Page container */
+.container {
+  margin-top: 140px;
+  max-width: 700px;
+  padding: 40px 20px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Profile photo */
+.profile-photo {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }

@@ -1,3 +1,4 @@
+/* Reset + Base */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -14,12 +15,14 @@ body {
   justify-content: center;
 }
 
+/* Homepage container */
 .container {
   text-align: center;
   max-width: 500px;
   padding: 40px;
 }
 
+/* Title & subtitle */
 h1 {
   font-size: 3rem;
   font-weight: 700;
@@ -30,6 +33,7 @@ p {
   margin: 1rem 0 2rem;
 }
 
+/* Link styles */
 .links a {
   display: inline-block;
   margin: 0 10px;
@@ -44,4 +48,36 @@ p {
 
 .links a:hover {
   background: #555;
+}
+
+/* About page (optional, won't affect homepage) */
+.container.about {
+  margin-top: 60px;
+  text-align: center;
+  max-width: 700px;
+  padding: 40px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.container.about p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin: 1rem 0;
+  color: #444;
+}
+
+.back-link {
+  display: inline-block;
+  margin-top: 2rem;
+  font-size: 1rem;
+  text-decoration: none;
+  color: #5c3aff;
+  border-bottom: 1px solid transparent;
+  transition: all 0.2s ease-in-out;
+}
+
+.back-link:hover {
+  border-color: #5c3aff;
+  color: #3a24d1;
 }

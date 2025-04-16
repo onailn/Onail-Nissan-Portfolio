@@ -44,6 +44,8 @@ p {
 }
 
 /* Navigation buttons under text */
+
+
 .links {
   display: flex;
   flex-direction: row;
@@ -61,6 +63,14 @@ p {
   color: #fff;
   transition: background 0.2s ease;
 }
+
+/* Home page container */
+.home-container {
+  text-align: center;
+  margin-top: 140px;
+  padding: 40px;
+}
+
 
 .links a:hover {
   background: #555;

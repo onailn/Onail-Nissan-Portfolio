@@ -1,4 +1,18 @@
-/* Navigation bar */
+/* Reset + Base */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #fafafa;
+  color: #333;
+  min-height: 100vh;
+}
+
+/* NAVBAR */
 .navbar {
   position: fixed;
   top: 0;
@@ -13,7 +27,6 @@
   z-index: 10;
 }
 
-/* Logo (your name) */
 .logo {
   font-size: 1.5rem;
   font-weight: bold;
@@ -21,7 +34,6 @@
   text-decoration: none;
 }
 
-/* Navigation links */
 .nav-links {
   display: flex;
   gap: 20px;
@@ -40,9 +52,31 @@
   background-color: #e0e0e0;
 }
 
-/* Home container layout */
-.home-container {
-  margin-top: 140px;
+/* MAIN CONTENT CONTAINER */
+.container {
   text-align: center;
+  max-width: 600px;
   padding: 40px;
+  margin: 140px auto 0 auto;
+}
+
+/* Home welcome styles */
+.home-container h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.home-container p {
+  font-size: 1.2rem;
+  color: #444;
+}
+
+/* Profile photo (optional) */
+.profile-photo {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }

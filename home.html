@@ -8,25 +8,27 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- Header -->
   <header class="navbar">
     <a href="index.html" class="logo">Onail Nissan</a>
-    <nav class="nav-links">
+    <nav class="nav-links" id="navLinks">
+      <a href="home.html">Home</a>
       <a href="https://www.linkedin.com/in/onailnissan/" target="_blank">LinkedIn</a>
       <a href="portfolio.html">Portfolio</a>
       <a href="about.html">About Me</a>
     </nav>
+    <a class="icon" onclick="toggleNav()">☰</a>
   </header>
 
-  <!-- Main Home Content -->
-  <div class="container home-container">
+  <div class="container">
     <h1>Welcome!</h1>
     <p>This is the Home page. Explore my portfolio and learn more about me!</p>
-
-    <!-- You can add as many paragraphs or headings as you like -->
-    <p>I’m currently finishing my Bachelor's in Data Analytics & Programming, and this site is a place to share everything I’m learning and building.</p>
-
-    <p>Feel free to check out my projects, connect with me on LinkedIn, and learn more about my background!</p>
+    <p>I’m currently finishing my Bachelor's in Data Analytics & Programming.</p>
   </div>
+
+  <script>
+    function toggleNav() {
+      document.getElementById("navLinks").classList.toggle("responsive");
+    }
+  </script>
 </body>
 </html>

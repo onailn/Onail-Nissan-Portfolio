@@ -33,29 +33,37 @@ p {
   margin: 1rem 0 2rem;
 }
 
-/* Link layout */
+/* Links layout - default: horizontal */
 .links {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
   gap: 15px;
 }
 
-/* Link styles */
+/* Button styles */
 .links a {
-  display: inline-block;
   text-decoration: none;
   font-size: 1rem;
   padding: 10px 20px;
   border-radius: 8px;
-  transition: all 0.3s ease;
   background: #333;
   color: #fff;
-  width: fit-content;
+  transition: all 0.3s ease;
 }
 
+/* Hover effect */
 .links a:hover {
   background: #555;
+}
+
+/* Stack buttons vertically on mobile */
+@media (max-width: 600px) {
+  .links {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 /* About page container */

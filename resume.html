@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resume | Onail Nissan</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background-color: #000;
+      color: #fff;
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 800px;
+      padding: 60px 30px;
+      margin: 60px auto;
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .resume-link {
+      margin-top: 20px;
+      display: inline-block;
+      padding: 12px 24px;
+      background-color: #1e90ff;
+      color: #fff;
+      font-size: 1rem;
+      border: none;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: background-color 0.3s;
+    }
+
+    .resume-link:hover {
+      background-color: #007acc;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="navbar">
+    <a href="index.html" class="logo">Onail Nissan</a>
+    <nav class="nav-links" id="navLinks">
+      <a href="home.html">Home</a>
+      <a href="resume.html">Resume</a>
+      <a href="https://www.linkedin.com/in/onailnissan/" target="_blank">LinkedIn</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="about.html">About Me</a>
+    </nav>
+    <a class="icon" onclick="toggleNav()">☰</a>
+  </header>
+
+  <div class="container">
+    <h2>Hello, here is my resume</h2>
+    <p>You can download or view my resume below:</p>
+
+    <!-- Optional: Add your actual resume.pdf in the repo -->
+    <a href="resume.pdf" target="_blank" class="resume-link">📄 View Resume (PDF)</a>
+  </div>
+
+  <script>
+    function toggleNav() {
+      document.getElementById("navLinks").classList.toggle("responsive");
+    }
+  </script>
+</body>
+</html>

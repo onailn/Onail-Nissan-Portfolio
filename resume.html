@@ -43,6 +43,16 @@
     .resume-link:hover {
       background-color: #007acc;
     }
+
+    iframe {
+      width: 100%;
+      max-width: 800px;
+      height: 900px;
+      border: none;
+      border-radius: 8px;
+      box-shadow: 0 0 12px rgba(255,255,255,0.05);
+      margin-top: 30px;
+    }
   </style>
 </head>
 <body>
@@ -61,10 +71,11 @@
 
   <div class="container">
     <h2>Hello, here is my resume</h2>
-    <p>You can download or view my resume below:</p>
+    <p>You can view it below or download it using the button:</p>
 
-    <!-- Optional: Add your actual resume.pdf in the repo -->
-    <a href="resume.pdf" target="_blank" class="resume-link">📄 View Resume (PDF)</a>
+    <a href="attachments/resume.pdf" target="_blank" class="resume-link" download>📥 Download My Resume</a>
+
+    <iframe src="attachments/resume.pdf"></iframe>
   </div>
 
   <script>
@@ -72,5 +83,6 @@
       document.getElementById("navLinks").classList.toggle("responsive");
     }
   </script>
+
 </body>
 </html>

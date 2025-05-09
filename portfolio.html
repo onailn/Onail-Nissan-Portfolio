@@ -6,6 +6,21 @@
   <title>Portfolio | Onail Nissan</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    /* Center the iframe container */
+    .iframe-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 20px;
+    }
+
+    iframe {
+      width: 100%; /* Make iframe responsive */
+      max-width: 1200px; /* Set a max width */
+      height: 800px; /* Set the height */
+    }
+  </style>
 </head>
 <body>
   <header class="navbar">
@@ -28,9 +43,11 @@
       <li><a href="https://github.com/yourgithub/project2" target="_blank">Project 2</a></li>
     </ul>
 
-    <!-- Embed Power BI Report -->
+    <!-- Centered Embed Power BI Report -->
     <h2>Power BI Report: Crime Data In LA</h2>
-<iframe title="Crime Data In LA" width="1200" height="800" src="https://app.powerbi.com/view?r=eyJrIjoiZWRmN2JlNWMtMTgyZi00ZDViLWFiNTctZDQ2NjBiZTlkODZmIiwidCI6IjhhNWI2ZmQyLWY1MGQtNDU2NS05MTBhLTFmZmU2NDU0ZTM2OCIsImMiOjZ9" frameborder="0" allowFullScreen="true"></iframe>
+    <div class="iframe-container">
+      <iframe title="Crime Data In LA" src="https://app.powerbi.com/view?r=eyJrIjoiZWRmN2JlNWMtMTgyZi00ZDViLWFiNTctZDQ2NjBiZTlkODZmIiwidCI6IjhhNWI2ZmQyLWY1MGQtNDU2NS05MTBhLTFmZmU2NDU0ZTM2OCIsImMiOjZ9" frameborder="0" allowFullScreen="true"></iframe>
+    </div>
   </div>
 
   <script>

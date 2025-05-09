@@ -7,17 +7,19 @@
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    /* Center the iframe */
+    /* Center the iframe container */
     .iframe-container {
       display: flex;
-      justify-content: center;
-      align-items: center;
+      justify-content: center; /* Center horizontally */
+      align-items: center; /* Center vertically */
       margin-top: 20px;
+      width: 100%; /* Ensure container takes up full width */
     }
 
     iframe {
-      width: 1200px;
-      height: 800px;
+      width: 100%; /* Make the iframe responsive */
+      height: 800px; /* Set a fixed height */
+      max-width: 1200px; /* Maximum width to prevent overflow */
       border: none;
     }
   </style>
@@ -36,7 +38,7 @@
   </header>
 
   <div class="container">
-    <h1>My Portfolio</h1>
+    <h1>Test</h1>
     <p>Here are some of my projects:</p>
     <ul style="list-style: none; padding-left: 0; margin-top: 20px;">
       <li style="margin-bottom: 10px;"><a href="https://github.com/yourgithub/project1" target="_blank">Project 1</a></li>
@@ -46,7 +48,7 @@
     <!-- Centered Embed Power BI Report -->
     <h2>Power BI Report: Crime Data In LA</h2>
     <div class="iframe-container">
-<iframe title="Crime Data In LA" width="1200" height="800" src="https://app.powerbi.com/view?r=eyJrIjoiZWRmN2JlNWMtMTgyZi00ZDViLWFiNTctZDQ2NjBiZTlkODZmIiwidCI6IjhhNWI2ZmQyLWY1MGQtNDU2NS05MTBhLTFmZmU2NDU0ZTM2OCIsImMiOjZ9" frameborder="0" allowFullScreen="true"></iframe>
+      <iframe title="Crime Data In LA" src="https://app.powerbi.com/view?r=eyJrIjoiZWRmN2JlNWMtMTgyZi00ZDViLWFiNTctZDQ2NjBiZTlkODZmIiwidCI6IjhhNWI2ZmQyLWY1MGQtNDU2NS05MTBhLTFmZmU2NDU0ZTM2OCIsImMiOjZ9" frameborder="0" allowFullScreen="true"></iframe>
     </div>
   </div>
 

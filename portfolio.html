@@ -9,24 +9,24 @@
   <style>
     /* Center the entire content */
     body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh; /* Full viewport height */
       margin: 0;
       background-color: #f4f4f4;
     }
 
     .container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
       text-align: center;
       width: 90%; /* Adjusts container width */
       max-width: 1200px; /* Keeps the width within a reasonable limit */
-      margin: 0 auto; /* Centers the container on the page */
     }
 
     /* Center the iframe */
     iframe {
-      width: 800px;
-      height: 836px;
+      width: 1200px;
+      height: 800px;
       border: none;
     }
   </style>
@@ -53,8 +53,8 @@
     </ul>
 
     <!-- Embed Power BI Report -->
-    <h2>TEST Power BI Report: Crime Data In LA</h2>
-    <iframe title="Crime Data In LA" width="800" height="836" src="https://app.powerbi.com/view?r=eyJrIjoiY2U0NzQyNmItNDQyNy00NzMxLWI4YTMtN2U1MWVkMGFjMjYxIiwidCI6IjhhNWI2ZmQyLWY1MGQtNDU2NS05MTBhLTFmZmU2NDU0ZTM2OCIsImMiOjZ9&pageName=ca1841dadeb53f61113c" frameborder="0" allowFullScreen="true"></iframe>
+    <h2>Power BI Report: Crime Data In LA</h2>
+    <iframe title="Crime Data In LA" src="https://app.powerbi.com/view?r=eyJrIjoiY2U0NzQyNmItNDQyNy00NzMxLWI4YTMtN2U1MWVkMGFjMjYxIiwidCI6IjhhNWI2ZmQyLWY1MGQtNDU2NS05MTBhLTFmZmU2NDU0ZTM2OCIsImMiOjZ9" frameborder="0" allowFullScreen="true"></iframe>
   </div>
 
   <script>

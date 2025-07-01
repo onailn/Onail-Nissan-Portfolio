@@ -226,20 +226,23 @@
     </div>
 
     <script type='text/javascript'>
-      var divElement = document.getElementById('vizContainer');
-      var vizElement = divElement.getElementsByTagName('object')[0];
-      vizElement.style.width = divElement.offsetWidth + 'px';
-      vizElement.style.height = '850px';
-      var scriptElement = document.createElement('script');
-      scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
-      vizElement.parentNode.insertBefore(scriptElement, vizElement);
-    </script>
-  </section>
+  const divElement = document.getElementById('vizContainer');
+  const vizElement = divElement.getElementsByTagName('object')[0];
 
-  <script>
-    function toggleNav() {
-      document.getElementById("navLinks").classList.toggle("responsive");
-    }
-  </script>
+  // 🧠 Set the actual width larger than the container (forces full render)
+  vizElement.style.width = '1400px'; // 👈 Increase or tweak this to fit your design
+  vizElement.style.height = '850px';
+
+  // 📏 Shrink it with CSS scale to fit into your layout
+  divElement.style.transform = 'scale(0.75)';
+  divElement.style.transformOrigin = 'top center';
+  divElement.style.overflow = 'hidden';
+
+  // 📜 Add the script to load Tableau
+  const scriptElement = document.createElement('script');
+  scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+  vizElement.parentNode.insertBefore(scriptElement, vizElement);
+</script>
+
 </body>
 </html>

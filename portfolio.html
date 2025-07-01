@@ -176,8 +176,9 @@
 
   <!-- Tableau Embed (Official JavaScript Version) -->
   <!-- Tableau Embed Responsive Fix -->
-<div style="width: 100%; overflow-x: auto;">
-  <div class='tableauPlaceholder' id='vizContainer' style='max-width: 1200px; margin: 0 auto;'>
+<!-- Tableau Embed with Scaling Fix -->
+<div style="width: 100%; overflow-x: auto; display: flex; justify-content: center;">
+  <div class='tableauPlaceholder' id='vizContainer' style='transform: scale(0.85); transform-origin: top center;'>
     <noscript>
       <a href='https://public.tableau.com/views/BritishAirwaysReview_17513272511620/Dashboard12'>
         <img alt='British Airways Dashboard'
@@ -185,7 +186,7 @@
           style='border: none' />
       </a>
     </noscript>
-    <object class='tableauViz'>
+    <object class='tableauViz' style='width: 1400px; height: 900px;'>
       <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
       <param name='embed_code_version' value='3' />
       <param name='name' value='BritishAirwaysReview_17513272511620/Dashboard12' />
@@ -204,21 +205,10 @@
 </div>
 
 <script type='text/javascript'>
-  const divElement = document.getElementById('vizContainer');
-  const vizElement = divElement.getElementsByTagName('object')[0];
-  vizElement.style.width = '100%';
-  vizElement.style.maxWidth = '1200px';
-  vizElement.style.height = '850px';
-  vizElement.style.display = 'block';
-  vizElement.style.margin = '0 auto';
-  const scriptElement = document.createElement('script');
+  var scriptElement = document.createElement('script');
   scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
-  vizElement.parentNode.insertBefore(scriptElement, vizElement);
+  document.body.appendChild(scriptElement);
 </script>
 
-    function toggleNav() {
-      document.getElementById("navLinks").classList.toggle("responsive");
-    }
-  </script>
 </body>
 </html>

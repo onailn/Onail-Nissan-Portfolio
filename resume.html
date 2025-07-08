@@ -16,12 +16,11 @@
     }
 
     .container {
-  max-width: 100%;
-  padding: 40px 20px;
-  margin: 0 auto;
-  text-align: center;
-}
-
+      max-width: 900px;
+      padding: 40px 20px;
+      margin: 0 auto;
+      text-align: center;
+    }
 
     h2 {
       font-size: 2rem;
@@ -45,9 +44,14 @@
       background-color: #007acc;
     }
 
-   <embed src="attachments/Onail_Nissan_resume.pdf" type="application/pdf" width="100%" height="1150px" style="border-radius: 8px; box-shadow: 0 0 12px rgba(0,0,0,0.15);" />
-
-
+    iframe {
+      width: 100%;
+      height: 1150px;
+      border: none;
+      border-radius: 8px;
+      margin-top: 30px;
+      box-shadow: 0 0 12px rgba(255, 255, 255, 0.05);
+    }
   </style>
 </head>
 <body>
@@ -67,13 +71,13 @@
   <div class="container">
     <h2>My Professional Resume.</h2>
     <h1>Thank you for checking out my resume.</h1>
-    <h1></h1>
     <p>You can view it below or download it using the button:</p>
 
-    <a href="attachments/Onail_Nissan_resume.pdf" target="_blank" class="resume-link" download>📥 Download My Resume</a>
+    <a href="attachments/Onail_Nissan_resume.pdf" target="_blank" class="resume-link" download>
+      📥 Download My Resume
+    </a>
 
-<iframe src="attachments/Onail_Nissan_resume.pdf#zoom=100" scrolling="no"></iframe>
-
+    <iframe src="attachments/Onail_Nissan_resume.pdf#view=FitH" title="Onail Nissan Resume"></iframe>
   </div>
 
   <script>

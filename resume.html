@@ -69,7 +69,7 @@
   </header>
 
   <div class="container">
-    <h2>My Professional Resume.</h2>
+    <h2>My Professional ResumeTEST.</h2>
     <p style="font-size: 1.2em; margin-bottom: 1em;">
       You can view it below or download it using the button below:
     </p>
@@ -81,8 +81,8 @@
       📥 Download My Resume
     </a>
 
-    <!-- Resume PDF -->
-    <iframe src="attachments/Onail_Nissan_resume.pdf" title="Onail Nissan Resume"></iframe>
+    <!-- Resume iframe placeholder -->
+    <div id="resume-frame"></div>
 
     <h2 style="margin-top: 60px;">Google Data Analytics Certificate</h2>
     <p>You can view the certificate below or download it here:</p>
@@ -91,18 +91,30 @@
       📥 Download Certificate
     </a>
 
-    <!-- Certificate PDF -->
-    <iframe 
-      src="attachments/Google Data Analytics Certification.pdf" 
-      title="Google Data Analytics Certificate"
-      style="width: 100%; height: 950px; border: none; border-radius: 8px; margin-top: 30px; box-shadow: 0 0 12px rgba(255, 255, 255, 0.05);">
-    </iframe>
+    <!-- Certificate iframe placeholder -->
+    <div id="cert-frame"></div>
   </div>
 
   <script>
     function toggleNav() {
       document.getElementById("navLinks").classList.toggle("responsive");
     }
+
+    // Defer iframe injection to prevent browser auto-scroll
+    window.addEventListener("DOMContentLoaded", () => {
+      setTimeout(() => {
+        document.getElementById("resume-frame").innerHTML = `
+          <iframe src="attachments/Onail_Nissan_resume.pdf" title="Onail Nissan Resume"></iframe>
+        `;
+        document.getElementById("cert-frame").innerHTML = `
+          <iframe 
+            src="attachments/Google Data Analytics Certification.pdf"
+            title="Google Data Analytics Certificate"
+            style="width: 100%; height: 950px; border: none; border-radius: 8px; margin-top: 30px; box-shadow: 0 0 12px rgba(255, 255, 255, 0.05);">
+          </iframe>
+        `;
+      }, 300); // delay just enough to avoid jump
+    });
   </script>
 
 </body>

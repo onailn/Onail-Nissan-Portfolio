@@ -192,16 +192,16 @@
         <a href="https://public.tableau.com/views/BritishAirwaysReview_17513272511620/Dashboard12" target="_blank">Open Tableau Dashboard</a>
       </p>
 
-      <!-- Tableau Embed (Centered and Responsive) -->
-      <div class='tableauPlaceholder' id='vizBritishAirways' style='width: 100%; margin: 40px auto 0 auto;'>
+      <!-- Responsive Tableau Embed -->
+      <div class='tableauPlaceholder' id='vizBritishAirways' style='max-width: 100%; margin: 40px auto;'>
         <noscript>
           <a href='https://public.tableau.com/views/BritishAirwaysReview_17513272511620/Dashboard12'>
-            <img alt='British Airways Dashboard' 
-                 src='https://public.tableau.com/static/images/Br/BritishAirwaysReview_17513272511620/Dashboard12/1.png' 
+            <img alt='British Airways Dashboard'
+                 src='https://public.tableau.com/static/images/Br/BritishAirwaysReview_17513272511620/Dashboard12/1.png'
                  style='border: none; display: block; margin: 0 auto;' />
           </a>
         </noscript>
-        <object class='tableauViz' style='width: 100%; height: 850px; display: block; margin: 0 auto;'>
+        <object class='tableauViz' style='width: 100%; height: 1000px; display: block; margin: 0 auto;'>
           <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
           <param name='embed_code_version' value='3' />
           <param name='name' value='BritishAirwaysReview_17513272511620/Dashboard12' />
@@ -218,12 +218,17 @@
       </div>
 
       <script type='text/javascript'>
-        var divElement = document.getElementById('vizBritishAirways');
-        var vizElement = divElement.getElementsByTagName('object')[0];
-        vizElement.style.height = '850px';
-        var scriptElement = document.createElement('script');
-        scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
-        vizElement.parentNode.insertBefore(scriptElement, vizElement);
+        const divBA = document.getElementById('vizBritishAirways');
+        const objBA = divBA.getElementsByTagName('object')[0];
+        function resizeBA() {
+          const width = divBA.offsetWidth;
+          objBA.style.height = (width * 0.75) + "px";
+        }
+        resizeBA();
+        window.addEventListener('resize', resizeBA);
+        const scriptBA = document.createElement('script');
+        scriptBA.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+        objBA.parentNode.insertBefore(scriptBA, objBA);
       </script>
     </section>
 
@@ -245,7 +250,6 @@
         <a href="https://public.tableau.com/views/IMD_17519323921720/Dashboard1" target="_blank">Open Tableau Dashboard</a>
       </p>
 
-      <!-- Tableau Embed -->
       <div class='tableauPlaceholder' id='viz1751964078147' style='position: relative'>
         <noscript>
           <a href='#'>

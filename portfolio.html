@@ -215,8 +215,8 @@
     <a href="https://public.tableau.com/views/BritishAirwaysReview_17513272511620/Dashboard12" target="_blank">Open Tableau Dashboard</a>
   </p>
 
-  <!-- Tableau Embed - Centered like IMDb -->
-  <div class='tableauPlaceholder' id='vizBritishAirways' style='position: relative;'>
+  <!-- Tableau Embed (Official JavaScript Version) -->
+  <div class='tableauPlaceholder' id='vizContainer' style='position: relative'>
     <noscript>
       <a href='https://public.tableau.com/views/BritishAirwaysReview_17513272511620/Dashboard12'>
         <img alt='British Airways Dashboard' 
@@ -241,16 +241,15 @@
   </div>
 
   <script type='text/javascript'>
-    var divElement = document.getElementById('vizBritishAirways');
+    var divElement = document.getElementById('vizContainer');
     var vizElement = divElement.getElementsByTagName('object')[0];
-    vizElement.style.width = '100%';
-    vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
+    vizElement.style.width = '110%';
+    vizElement.style.height = '850px';
     var scriptElement = document.createElement('script');
     scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
     vizElement.parentNode.insertBefore(scriptElement, vizElement);
   </script>
 </section>
-
 
 
 

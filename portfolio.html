@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,12 +7,12 @@
   <title>Portfolio - Onail Nissan</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-
   <style>
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
       background-color: #f4f4f4;
+      zoom: 100%;
     }
 
     header.navbar {
@@ -34,221 +35,331 @@
       margin-left: 20px;
       text-decoration: none;
       color: white;
+      font-weight: 500;
     }
 
-    .container {
-      max-width: 1400px;
-      margin: 40px auto;
-      padding: 20px 40px;
+    .nav-links a:hover {
+      text-decoration: underline;
     }
+
+  .container {
+  max-width: 1400px;
+  margin: 40px auto;
+  padding: 20px 40px;
+}
+
 
     .project-card {
-      background-color: white;
-      border-radius: 10px;
-      padding: 30px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      margin-bottom: 40px;
+  background-color: white;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+
+    .project-title {
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .project-description {
+      font-size: 1rem;
+      font-weight: 400;
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+
+    .skills h3 {
+      font-size: 1.1rem;
+      margin-bottom: 10px;
     }
 
     .skills ul {
-      list-style-type: none;
-      padding-left: 0;
+  list-style-type: none;
+  padding-left: 0;
+  text-align: center;
+  margin: 0 auto;
+}
+
+
+    .skills li {
+      margin-bottom: 5px;
     }
 
-    .skills ul ul {
-      padding-left: 20px;
-      list-style-type: disc;
+    .project-links {
+      margin: 20px 0;
+      font-size: 1rem;
     }
 
-    iframe {
-      width: 100%;
-      height: 850px;
-      border-radius: 12px;
-      margin-top: 30px;
+    .project-links a {
+      color: #0066cc;
+      text-decoration: none;
+    }
+
+    .project-links a:hover {
+      text-decoration: underline;
+    }
+
+   iframe {
+  width: 100%;
+  height: 850px;
+  border: none;
+  border-radius: 12px;
+  margin: 40px auto 0 auto;
+  display: block;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+  transform: scale(0.9);
+  transform-origin: top center;
+}
+
+
+
+    .icon {
+      display: none;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+
+      .icon {
+        display: block;
+        font-size: 1.5rem;
+        cursor: pointer;
+        color: white;
+      }
+
+      .nav-links.responsive {
+        display: block;
+        margin-top: 10px;
+      }
+
+      .nav-links.responsive a {
+        display: block;
+        margin: 10px 0;
+      }
     }
   </style>
 </head>
-
 <body>
+  <header class="navbar">
+    <a href="index.html" class="logo">Onail Nissan</a>
+    <nav class="nav-links" id="navLinks">
+      <a href="home.html">Home</a>
+      <a href="resume.html">Resume</a>
+      <a href="https://www.linkedin.com/in/onailnissan/" target="_blank">LinkedIn</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="about.html">About Me</a>
+    </nav>
+    <a class="icon" onclick="toggleNav()">☰</a>
+  </header>
 
-<header class="navbar">
-  <a href="index.html" class="logo">Onail Nissan</a>
-  <nav class="nav-links">
-    <a href="home.html">Home</a>
-    <a href="resume.html">Resume</a>
-    <a href="portfolio.html">Portfolio</a>
-  </nav>
-</header>
+  <div class="container">
+    <section class="project-card">
+      <h2 class="project-title">Crime in LA - PowerBI Dashboard</h2>
 
-<div class="container">
+     <p class="project-description">
+  This Power BI dashboard shows crime trends in Los Angeles from 2020–2024, including hotspots and weapon types.<br><br>
+  This dashboard is interactive. You can filter by year, month, or time of day to explore the data further.
+</p>
 
-<!-- ================= CRIME DASHBOARD ================= -->
-<section class="project-card">
-  <h2>Crime in LA - Power BI Dashboard</h2>
 
-  <p>
-    This dashboard analyzes crime trends in Los Angeles (2020–2024) to identify patterns in time of day, weapon types, and hotspots.
-  </p>
-
-  <div class="skills">
-    <h3>Skills & Techniques:</h3>
-    <ul>
-      <li>
-        <strong>Data Cleaning</strong>
+      <div class="skills">
+        <h3>Skills Used:</h3>
         <ul>
-          <li>Handled missing values</li>
-          <li>Standardized date/time formats</li>
-          <li>Removed duplicate records</li>
+          <li>Data Cleaning</li>
+          <li>Data Visualization</li>
+          <li>Dashboard Design</li>
         </ul>
-      </li>
+      </div>
 
-      <li>
-        <strong>Data Visualization</strong>
-        <ul>
-          <li>Built time-based trend charts</li>
-          <li>Highlighted peak crime periods</li>
-          <li>Displayed key metrics clearly</li>
-        </ul>
-      </li>
+      <p class="project-links">
+        <a href="https://catalog.data.gov/dataset/crime-data-from-2020-to-present" target="_blank">View the data source</a> -
+        <a href="https://app.powerbi.com/view?r=eyJrIjoiY2U0NzQyNmItNDQyNy00NzMxLWI4YTMtN2U1MWVkMGFjMjYxIiwidCI6IjhhNWI2ZmQyLWY1MGQtNDU2NS05MTBhLTFmZmU2NDU0ZTM2OCIsImMiOjZ9&pageName=ca1841dadeb53f61113c" target="_blank">Open PowerBI dashboard</a>
+      </p>
 
-      <li>
-        <strong>Dashboard Design</strong>
-        <ul>
-          <li>Added interactive filters (year, month, time)</li>
-          <li>Designed layout for exploration</li>
-          <li>Included tooltips for deeper insights</li>
-        </ul>
-      </li>
-    </ul>
-  </div>
-
-  <iframe src="YOUR_POWERBI_LINK"></iframe>
-</section>
-
-
-<!-- ================= BRITISH AIRWAYS ================= -->
-<section class="project-card">
-  <h2>British Airways - Tableau Dashboard</h2>
-
-  <p>
-    This dashboard evaluates airline performance using customer reviews and ratings to identify strengths and weaknesses.
-  </p>
-
-  <div class="skills">
-    <h3>Skills & Techniques:</h3>
-    <ul>
-      <li>
-        <strong>Tableau</strong>
-        <ul>
-          <li>Built interactive dashboards</li>
-          <li>Created filters and drilldowns</li>
-        </ul>
-      </li>
-
-      <li>
-        <strong>Data Visualization</strong>
-        <ul>
-          <li>Analyzed customer rating trends</li>
-          <li>Highlighted performance differences</li>
-        </ul>
-      </li>
-
-      <li>
-        <strong>Data Analysis</strong>
-        <ul>
-          <li>Evaluated satisfaction metrics</li>
-          <li>Identified key performance drivers</li>
-        </ul>
-      </li>
-    </ul>
-  </div>
-
-  <iframe src="YOUR_TABLEAU_LINK"></iframe>
-</section>
-
-
-<!-- ================= IMDB ================= -->
-<section class="project-card">
-  <h2>IMDb Top 300 Movies - Tableau Dashboard</h2>
-
-  <p>
-    This dashboard explores trends in movie ratings, genres, and directors across IMDb’s top films.
-  </p>
-
-  <div class="skills">
-    <h3>Skills & Techniques:</h3>
-    <ul>
-      <li>
-        <strong>Data Cleaning</strong>
-        <ul>
-          <li>Structured dataset for analysis</li>
-          <li>Handled missing values</li>
-        </ul>
-      </li>
-
-      <li>
-        <strong>Tableau</strong>
-        <ul>
-          <li>Built interactive dashboards</li>
-          <li>Created dynamic filters</li>
-        </ul>
-      </li>
-
-      <li>
-        <strong>Data Visualization</strong>
-        <ul>
-          <li>Analyzed rating distributions</li>
-          <li>Highlighted genre trends</li>
-        </ul>
-      </li>
-    </ul>
-  </div>
-
-  <iframe src="YOUR_TABLEAU_LINK"></iframe>
-</section>
-
-
-<!-- ================= HR DASHBOARD ================= -->
-<section class="project-card">
-  <h2>HR Dashboard - Power BI</h2>
-
-  <p>
-    This dashboard analyzes employee data including retention, demographics, and training to support HR decision-making.
-  </p>
-
-  <div class="skills">
-    <h3>Skills & Techniques:</h3>
-    <ul>
-      <li>
-        <strong>Power BI</strong>
-        <ul>
-          <li>Built interactive dashboards</li>
-          <li>Created slicers and filters</li>
-        </ul>
-      </li>
-
-      <li>
-        <strong>Data Analysis</strong>
-        <ul>
-          <li>Analyzed employee retention trends</li>
-          <li>Identified workforce patterns</li>
-        </ul>
-      </li>
-
-      <li>
-        <strong>Dashboard Design</strong>
-        <ul>
-          <li>Designed business-focused layout</li>
-          <li>Highlighted key HR metrics</li>
-        </ul>
-      </li>
-    </ul>
-  </div>
-
-  <iframe src="YOUR_POWERBI_LINK"></iframe>
-</section>
-
+<div style="width: 100%; overflow-x: hidden;">
+  <iframe 
+    title="Crime Data In LA"
+    src="https://app.powerbi.com/view?r=eyJrIjoiY2U0NzQyNmItNDQyNy00NzMxLWI4YTMtN2U1MWVkMGFjMjYxIiwidCI6IjhhNWI2ZmQyLWY1MGQtNDU2NS05MTBhLTFmZmU2NDU0ZTM2OCIsImMiOjZ9&pageName=ca1841dadeb53f61113c&filterPaneEnabled=false&navContentPaneEnabled=false"
+    style="width: 102%; height: 950px; border: none; border-radius: 12px; display: block; margin: 40px auto 0 auto; box-shadow: 0 2px 12px rgba(0,0,0,0.15);">
+  </iframe>
 </div>
+    </section>
+  </div>
 
+
+<section class="project-card">
+  <h2 class="project-title">British Airways - Tableau Dashboard</h2>
+
+  <p class="project-description">
+    This Tableau dashboard explores trends and performance metrics for British Airways using interactive charts and filters.
+  </p>
+
+  <div class="skills">
+    <h3>Skills Used:</h3>
+    <ul>
+      <li>Tableau</li>
+      <li>Data Visualization</li>
+      <li>Interactive Dashboard Design</li>
+    </ul>
+  </div>
+
+  <p class="project-links">
+    <a href="https://github.com/onailn/Project-2-British-Airways-Data" target="_blank">View the data source</a> -
+    <a href="https://public.tableau.com/views/BritishAirwaysReview_17513272511620/Dashboard" target="_blank">Open Tableau Dashboard</a>
+  </p>
+
+  <!-- Tableau Embed -->
+  <div class='tableauPlaceholder' id='vizContainer' style='position: relative'>
+    <noscript>
+      <a href='https://public.tableau.com/views/BritishAirwaysReview_17513272511620/Dashboard'>
+        <img alt='British Airways Dashboard' 
+             src='https://public.tableau.com/static/images/Br/BritishAirwaysReview_17513272511620/Dashboard/1.png' 
+             style='border: none' />
+      </a>
+    </noscript>
+
+    <object class='tableauViz' style='display:none;'>
+      <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+      <param name='embed_code_version' value='3' />
+      <param name='name' value='BritishAirwaysReview_17513272511620/Dashboard' />
+      <param name='tabs' value='no' />
+      <param name='toolbar' value='no' />
+      <param name='static_image' value='https://public.tableau.com/static/images/Br/BritishAirwaysReview_17513272511620/Dashboard/1.png' />
+      <param name='animate_transition' value='yes' />
+      <param name='display_static_image' value='yes' />
+      <param name='display_spinner' value='yes' />
+      <param name='display_overlay' value='yes' />
+      <param name='display_count' value='yes' />
+      <param name='language' value='en-US' />
+    </object>
+  </div>
+
+  <script type='text/javascript'>
+    var divElement = document.getElementById('vizContainer');
+    var vizElement = divElement.getElementsByTagName('object')[0];
+    vizElement.style.width = '100%';
+    vizElement.style.height = '850px';
+
+    var scriptElement = document.createElement('script');
+    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+    vizElement.parentNode.insertBefore(scriptElement, vizElement);
+  </script>
+</section>
+
+
+
+
+  
+
+  <script>
+    function toggleNav() {
+      document.getElementById("navLinks").classList.toggle("responsive");
+    }
+  </script>
+
+<section class="project-card">
+  <h2 class="project-title">IMDb Top 300 Movies - Tableau Dashboard</h2>
+
+  <p class="project-description">
+    This Tableau dashboard visualizes IMDb's Top 300 Movies, showing trends in genres, average ratings, and top directors across time.
+  </p>
+
+  <div class="skills">
+    <h3>Skills Used:</h3>
+    <ul>
+      <li>Data Cleaning</li>
+      <li>Tableau</li>
+      <li>Interactive Dashboard Design</li>
+    </ul>
+  </div>
+
+  <p class="project-links">
+    <a href="https://www.imdb.com/list/ls008018223/" target="_blank">View IMDb Source</a> -
+    <a href="https://public.tableau.com/views/IMD_17519323921720/Dashboard1" target="_blank">Open Tableau Dashboard</a>
+  </p>
+
+  <!-- Tableau Embed -->
+  <div class='tableauPlaceholder' id='viz1751964078147' style='position: relative'>
+    <noscript>
+      <a href='#'>
+        <img alt='Dashboard 1'
+             src='https://public.tableau.com/static/images/IM/IMD_17519323921720/Dashboard1/1_rss.png'
+             style='border: none' />
+      </a>
+    </noscript>
+    <object class='tableauViz' style='display:none;'>
+      <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+      <param name='embed_code_version' value='3' />
+      <param name='site_root' value='' />
+      <param name='name' value='IMD_17519323921720/Dashboard1' />
+      <param name='tabs' value='no' />
+      <param name='toolbar' value='yes' />
+      <param name='static_image' value='https://public.tableau.com/static/images/IM/IMD_17519323921720/Dashboard1/1.png' />
+      <param name='animate_transition' value='yes' />
+      <param name='display_static_image' value='yes' />
+      <param name='display_spinner' value='yes' />
+      <param name='display_overlay' value='yes' />
+      <param name='display_count' value='yes' />
+      <param name='language' value='en-US' />
+    </object>
+  </div>
+
+
+<section class="project-card">
+  <h2 class="project-title">HR Dashboard - Power BI</h2>
+
+  <p class="project-description">
+    This Power BI dashboard explores an example of a workplace. The data includes employee demographics, tenure by role, and how often training is done. You can filter by department, education, gender and job title for deeper insights.
+  </p>
+
+  <div class="skills">
+    <h3>Skills Used:</h3>
+    <ul>
+      <li>Power BI</li>
+      <li>Data Cleaning</li>
+      <li>Interactive Reporting</li>
+    </ul>
+  </div>
+
+  <p class="project-links">
+    <a href="https://www.kaggle.com/datasets/saadharoon27/hr-analytics-dataset" target="_blank">View the data source</a> -
+    <a href="https://app.powerbi.com/view?r=eyJrIjoiOWEyOGRiYWQtZjQ1Mi00NTU0LWEyNmEtMjRlMWUwYjQ5M2ZiIiwidCI6IjhhNWI2ZmQyLWY1MGQtNDU2NS05MTBhLTFmZmU2NDU0ZTM2OCIsImMiOjZ9" target="_blank">Open Power BI Dashboard</a>
+  </p>
+
+  <div style="width: 100%; overflow-x: hidden;">
+    <iframe 
+      title="HR-Dashboard"
+      width="800"
+      height="636"
+      src="https://app.powerbi.com/view?r=eyJrIjoiOWEyOGRiYWQtZjQ1Mi00NTU0LWEyNmEtMjRlMWUwYjQ5M2ZiIiwidCI6IjhhNWI2ZmQyLWY1MGQtNDU2NS05MTBhLTFmZmU2NDU0ZTM2OCIsImMiOjZ9"
+      frameborder="0"
+      allowFullScreen="true"
+      style="display: block; margin: 40px auto 0 auto; border-radius: 12px; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);">
+    </iframe>
+  </div>
+</section>
+
+  
+
+
+
+  
+  <script type='text/javascript'>
+    var divElement = document.getElementById('viz1751964078147');
+    var vizElement = divElement.getElementsByTagName('object')[0];
+    vizElement.style.width = '100%';
+    vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
+    var scriptElement = document.createElement('script');
+    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+    vi
+
+
+  
 </body>
 </html>

@@ -84,6 +84,7 @@
       padding: 34px;
       margin-bottom: 36px;
       box-shadow: var(--shadow);
+      text-align: center;
     }
 
     .portfolio-intro h1 {
@@ -94,7 +95,7 @@
     }
 
     .portfolio-intro p {
-      margin: 0;
+      margin: 0 auto;
       color: var(--muted);
       max-width: 950px;
       font-size: 1.05rem;
@@ -103,6 +104,7 @@
     .portfolio-tags {
       display: flex;
       flex-wrap: wrap;
+      justify-content: center;
       gap: 10px;
       margin-top: 22px;
     }
@@ -263,51 +265,55 @@
       display: block;
     }
 
-    iframe {
+    .embed-wrapper iframe {
       width: 100%;
-      height: 800px;
+      height: clamp(650px, 78vh, 900px);
       border: none;
       display: block;
       margin: 0 auto;
     }
 
-    .embed-wrapper iframe {
-      width: 100%;
-      height: clamp(650px, 78vh, 900px);
-      transform: none;
-      margin-bottom: 0;
-    }
-
-    .tableau-fit-wrapper {
+    /* Tableau website-only fit option */
+    .tableau-scale-wrapper {
       width: 100%;
       max-width: 1280px;
-      margin: 0 auto;
+      height: 748px;
+      margin: 24px auto 0;
       overflow: hidden;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: white;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12);
       position: relative;
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      background: #ffffff;
     }
 
-    .tableauPlaceholder {
-      width: 1366px !important;
-      height: 820px !important;
-      transform-origin: top center;
-      margin: 0 auto;
-      flex: 0 0 auto;
+    .tableau-scale-wrapper iframe {
+      width: 1366px;
+      height: 850px;
+      transform: scale(0.88);
+      transform-origin: top left;
+      border: none;
+      display: block;
     }
 
-    .tableauPlaceholder object,
-    .tableauViz {
-      width: 1366px !important;
-      height: 820px !important;
+    @media (min-width: 1400px) {
+      .tableau-scale-wrapper {
+        height: 808px;
+      }
+
+      .tableau-scale-wrapper iframe {
+        transform: scale(0.95);
+      }
     }
 
-    .small-note {
-      margin-top: 14px;
-      color: var(--muted);
-      font-size: 0.9rem;
+    @media (max-width: 1100px) {
+      .tableau-scale-wrapper {
+        height: 680px;
+      }
+
+      .tableau-scale-wrapper iframe {
+        transform: scale(0.80);
+      }
     }
 
     @media (max-width: 900px) {
@@ -315,8 +321,16 @@
         grid-template-columns: 1fr;
       }
 
-      iframe {
+      .embed-wrapper iframe {
         height: 650px;
+      }
+
+      .tableau-scale-wrapper {
+        height: 595px;
+      }
+
+      .tableau-scale-wrapper iframe {
+        transform: scale(0.70);
       }
     }
 
@@ -362,6 +376,16 @@
         font-size: 1.45rem;
       }
     }
+
+    @media (max-width: 700px) {
+      .tableau-scale-wrapper {
+        height: 510px;
+      }
+
+      .tableau-scale-wrapper iframe {
+        transform: scale(0.60);
+      }
+    }
   </style>
 </head>
 
@@ -396,7 +420,7 @@
         <span class="tag">DAX</span>
         <span class="tag">Dashboard Design</span>
         <span class="tag">Data Storytelling</span>
-        <span class="tag">Accessibility-Focused Design</span>
+        <span class="tag">Business Intelligence</span>
       </div>
     </section>
 
@@ -413,9 +437,7 @@
       <div class="project-grid">
         <div class="info-box">
           <h3>Business Question</h3>
-          <p>
-            Are homes becoming less affordable in Peoria, Arizona because median home values are increasing faster than median household income?
-          </p>
+          <p>Are homes becoming less affordable in Peoria, Arizona because median home values are increasing faster than median household income?</p>
         </div>
 
         <div class="info-box">
@@ -442,9 +464,7 @@
 
         <div class="info-box">
           <h3>Business Value</h3>
-          <p>
-            This dashboard helps users understand how affordability changes over time and supports a clearer discussion about housing pressure, income growth, and long-term financial planning.
-          </p>
+          <p>This dashboard helps users understand how affordability changes over time and supports a clearer discussion about housing pressure, income growth, and long-term financial planning.</p>
         </div>
       </div>
 
@@ -470,9 +490,7 @@
       <div class="project-grid">
         <div class="info-box">
           <h3>Business Question</h3>
-          <p>
-            When and where are crimes happening most often, and what patterns can be found by time of day, crime type, and location?
-          </p>
+          <p>When and where are crimes happening most often, and what patterns can be found by time of day, crime type, and location?</p>
         </div>
 
         <div class="info-box">
@@ -499,9 +517,7 @@
 
         <div class="info-box">
           <h3>Business Value</h3>
-          <p>
-            This dashboard helps users quickly identify crime patterns by location, time, and incident type. These insights can support public safety reporting, resource planning, and clearer communication of crime trends to non-technical users.
-          </p>
+          <p>This dashboard helps users quickly identify crime patterns by location, time, and incident type. These insights can support public safety reporting, resource planning, and clearer communication of crime trends to non-technical users.</p>
         </div>
       </div>
 
@@ -532,9 +548,7 @@
       <div class="project-grid">
         <div class="info-box">
           <h3>Business Question</h3>
-          <p>
-            What areas of the British Airways customer experience are rated highest or lowest, and where should the airline focus improvement efforts?
-          </p>
+          <p>What areas of the British Airways customer experience are rated highest or lowest, and where should the airline focus improvement efforts?</p>
         </div>
 
         <div class="info-box">
@@ -542,7 +556,7 @@
           <ul>
             <li>Average rating visuals help compare customer satisfaction across different categories.</li>
             <li>Location and aircraft filters allow users to explore patterns in review scores.</li>
-            <li>Rating scales should clearly explain what the score is out of, such as out of 5 or out of 10.</li>
+            <li>Ratings help identify service areas that may influence the overall travel experience.</li>
           </ul>
         </div>
 
@@ -560,9 +574,7 @@
 
         <div class="info-box">
           <h3>Business Value</h3>
-          <p>
-            This dashboard helps summarize customer review patterns so airline teams can better understand satisfaction drivers, compare performance by category, and identify areas that may impact the customer travel experience.
-          </p>
+          <p>This dashboard helps summarize customer review patterns so airline teams can better understand satisfaction drivers, compare performance by category, and identify areas that may impact the customer travel experience.</p>
         </div>
       </div>
 
@@ -571,32 +583,15 @@
         <a class="button-link" href="https://public.tableau.com/views/BritishAirwaysReview_17513272511620/Dashboard" target="_blank">Open Tableau Dashboard</a>
       </div>
 
-      <div class="embed-wrapper">
-        <div class="tableau-fit-wrapper" data-base-width="1366" data-base-height="820">
-          <div class="tableauPlaceholder" id="britishAirwaysViz" style="position: relative;">
-          <noscript>
-            <a href="https://public.tableau.com/views/BritishAirwaysReview_17513272511620/Dashboard">
-              <img alt="British Airways Dashboard" src="https://public.tableau.com/static/images/Br/BritishAirwaysReview_17513272511620/Dashboard/1.png" style="border: none; width: 100%;" />
-            </a>
-          </noscript>
-          <object class="tableauViz" style="display:none; width: 100%; height: 100%;">
-            <param name="host_url" value="https%3A%2F%2Fpublic.tableau.com%2F" />
-            <param name="embed_code_version" value="3" />
-            <param name="name" value="BritishAirwaysReview_17513272511620/Dashboard" />
-            <param name="tabs" value="no" />
-            <param name="toolbar" value="no" />
-            <param name="showVizHome" value="no" />
-            <param name="device" value="desktop" />
-            <param name="static_image" value="https://public.tableau.com/static/images/Br/BritishAirwaysReview_17513272511620/Dashboard/1.png" />
-            <param name="animate_transition" value="yes" />
-            <param name="display_static_image" value="yes" />
-            <param name="display_spinner" value="yes" />
-            <param name="display_overlay" value="yes" />
-            <param name="display_count" value="yes" />
-            <param name="language" value="en-US" />
-          </object>
-          </div>
-        </div>
+      <div class="tableau-scale-wrapper">
+        <iframe
+          title="British Airways Tableau Dashboard"
+          src="https://public.tableau.com/views/BritishAirwaysReview_17513272511620/Dashboard?:showVizHome=no&:embed=true&:toolbar=no"
+          width="1366"
+          height="850"
+          frameborder="0"
+          allowfullscreen>
+        </iframe>
       </div>
     </section>
 
@@ -613,9 +608,7 @@
       <div class="project-grid">
         <div class="info-box">
           <h3>Business Question</h3>
-          <p>
-            What genres, directors, and time periods are most common among IMDb's top-rated movies?
-          </p>
+          <p>What genres, directors, and time periods are most common among IMDb's top-rated movies?</p>
         </div>
 
         <div class="info-box">
@@ -623,7 +616,7 @@
           <ul>
             <li>Genre breakdowns show which movie categories appear most often in the Top 300 list.</li>
             <li>Director analysis helps identify creators with multiple highly rated films.</li>
-            <li>Rating visuals should clearly state that IMDb ratings are scored out of 10.</li>
+            <li>Rating and release-year visuals make it easier to compare movie patterns over time.</li>
           </ul>
         </div>
 
@@ -641,9 +634,7 @@
 
         <div class="info-box">
           <h3>Business Value</h3>
-          <p>
-            This dashboard turns movie ranking data into an easy-to-read visual summary. It helps users compare genres, ratings, directors, and time periods to better understand patterns among highly rated films.
-          </p>
+          <p>This dashboard turns movie ranking data into an easy-to-read visual summary. It helps users compare genres, ratings, directors, and time periods to better understand patterns among highly rated films.</p>
         </div>
       </div>
 
@@ -652,33 +643,15 @@
         <a class="button-link" href="https://public.tableau.com/views/IMD_17519323921720/Dashboard1" target="_blank">Open Tableau Dashboard</a>
       </div>
 
-      <div class="embed-wrapper">
-        <div class="tableau-fit-wrapper" data-base-width="1366" data-base-height="820">
-          <div class="tableauPlaceholder" id="imdbViz" style="position: relative;">
-          <noscript>
-            <a href="https://public.tableau.com/views/IMD_17519323921720/Dashboard1">
-              <img alt="IMDb Dashboard" src="https://public.tableau.com/static/images/IM/IMD_17519323921720/Dashboard1/1.png" style="border: none; width: 100%;" />
-            </a>
-          </noscript>
-          <object class="tableauViz" style="display:none; width: 100%; height: 100%;">
-            <param name="host_url" value="https%3A%2F%2Fpublic.tableau.com%2F" />
-            <param name="embed_code_version" value="3" />
-            <param name="site_root" value="" />
-            <param name="name" value="IMD_17519323921720/Dashboard1" />
-            <param name="tabs" value="no" />
-            <param name="toolbar" value="no" />
-            <param name="showVizHome" value="no" />
-            <param name="device" value="desktop" />
-            <param name="static_image" value="https://public.tableau.com/static/images/IM/IMD_17519323921720/Dashboard1/1.png" />
-            <param name="animate_transition" value="yes" />
-            <param name="display_static_image" value="yes" />
-            <param name="display_spinner" value="yes" />
-            <param name="display_overlay" value="yes" />
-            <param name="display_count" value="yes" />
-            <param name="language" value="en-US" />
-          </object>
-          </div>
-        </div>
+      <div class="tableau-scale-wrapper">
+        <iframe
+          title="IMDb Tableau Dashboard"
+          src="https://public.tableau.com/views/IMD_17519323921720/Dashboard1?:showVizHome=no&:embed=true&:toolbar=no"
+          width="1366"
+          height="850"
+          frameborder="0"
+          allowfullscreen>
+        </iframe>
       </div>
     </section>
 
@@ -695,9 +668,7 @@
       <div class="project-grid">
         <div class="info-box">
           <h3>Business Question</h3>
-          <p>
-            What employee patterns can HR leaders identify across tenure, departments, job roles, education, and training activity?
-          </p>
+          <p>What employee patterns can HR leaders identify across tenure, departments, job roles, education, and training activity?</p>
         </div>
 
         <div class="info-box">
@@ -724,9 +695,7 @@
 
         <div class="info-box">
           <h3>Business Value</h3>
-          <p>
-            This dashboard demonstrates how HR data can be turned into a clear story for leaders. It can support conversations about retention, recruiting, employee development, and workforce planning.
-          </p>
+          <p>This dashboard demonstrates how HR data can be turned into a clear story for leaders. It can support conversations about retention, recruiting, employee development, and workforce planning.</p>
         </div>
       </div>
 
@@ -744,7 +713,7 @@
       </div>
     </section>
 
-    <!-- Accessibility / Design Philosophy -->
+    <!-- Portfolio Approach -->
     <section class="project-card">
       <div class="project-header">
         <span class="project-kicker">Portfolio Approach</span>
@@ -782,44 +751,6 @@
     function toggleNav() {
       document.getElementById("navLinks").classList.toggle("responsive");
     }
-
-    function resizeTableauDashboards() {
-      const wrappers = document.querySelectorAll(".tableau-fit-wrapper");
-
-      wrappers.forEach((wrapper) => {
-        const placeholder = wrapper.querySelector(".tableauPlaceholder");
-        if (!placeholder) return;
-
-        const baseWidth = Number(wrapper.dataset.baseWidth) || 1366;
-        const baseHeight = Number(wrapper.dataset.baseHeight) || 820;
-        const scale = Math.min(wrapper.clientWidth / baseWidth, 1);
-
-        placeholder.style.transform = `scale(${scale})`;
-        wrapper.style.height = `${baseHeight * scale}px`;
-      });
-    }
-
-    function loadTableauViz(containerId) {
-      const divElement = document.getElementById(containerId);
-      if (!divElement) return;
-
-      const vizElement = divElement.getElementsByTagName("object")[0];
-      if (!vizElement) return;
-
-      vizElement.style.width = "1366px";
-      vizElement.style.height = "820px";
-      divElement.style.width = "1366px";
-      divElement.style.height = "820px";
-
-      const scriptElement = document.createElement("script");
-      scriptElement.src = "https://public.tableau.com/javascripts/api/viz_v1.js";
-      vizElement.parentNode.insertBefore(scriptElement, vizElement);
-    }
-
-    loadTableauViz("britishAirwaysViz");
-    loadTableauViz("imdbViz");
-    resizeTableauDashboards();
-    window.addEventListener("resize", resizeTableauDashboards);
   </script>
 </body>
 </html>

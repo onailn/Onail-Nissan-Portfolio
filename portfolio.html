@@ -278,16 +278,30 @@
       margin-bottom: 0;
     }
 
-    .tableauPlaceholder,
-    .tableauViz {
-      width: 100% !important;
-      height: clamp(650px, 78vh, 900px) !important;
+    .tableau-fit-wrapper {
+      width: 100%;
+      max-width: 1280px;
       margin: 0 auto;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      background: #ffffff;
     }
 
-    .tableauPlaceholder object {
-      width: 100% !important;
-      height: clamp(650px, 78vh, 900px) !important;
+    .tableauPlaceholder {
+      width: 1366px !important;
+      height: 820px !important;
+      transform-origin: top center;
+      margin: 0 auto;
+      flex: 0 0 auto;
+    }
+
+    .tableauPlaceholder object,
+    .tableauViz {
+      width: 1366px !important;
+      height: 820px !important;
     }
 
     .small-note {
@@ -558,7 +572,8 @@
       </div>
 
       <div class="embed-wrapper">
-        <div class="tableauPlaceholder" id="britishAirwaysViz" style="position: relative; width: 100%; height: clamp(650px, 78vh, 900px);">
+        <div class="tableau-fit-wrapper" data-base-width="1366" data-base-height="820">
+          <div class="tableauPlaceholder" id="britishAirwaysViz" style="position: relative;">
           <noscript>
             <a href="https://public.tableau.com/views/BritishAirwaysReview_17513272511620/Dashboard">
               <img alt="British Airways Dashboard" src="https://public.tableau.com/static/images/Br/BritishAirwaysReview_17513272511620/Dashboard/1.png" style="border: none; width: 100%;" />
@@ -580,6 +595,7 @@
             <param name="display_count" value="yes" />
             <param name="language" value="en-US" />
           </object>
+          </div>
         </div>
       </div>
     </section>
@@ -637,7 +653,8 @@
       </div>
 
       <div class="embed-wrapper">
-        <div class="tableauPlaceholder" id="imdbViz" style="position: relative; width: 100%; height: clamp(650px, 78vh, 900px);">
+        <div class="tableau-fit-wrapper" data-base-width="1366" data-base-height="820">
+          <div class="tableauPlaceholder" id="imdbViz" style="position: relative;">
           <noscript>
             <a href="https://public.tableau.com/views/IMD_17519323921720/Dashboard1">
               <img alt="IMDb Dashboard" src="https://public.tableau.com/static/images/IM/IMD_17519323921720/Dashboard1/1.png" style="border: none; width: 100%;" />
@@ -660,6 +677,7 @@
             <param name="display_count" value="yes" />
             <param name="language" value="en-US" />
           </object>
+          </div>
         </div>
       </div>
     </section>
@@ -765,6 +783,22 @@
       document.getElementById("navLinks").classList.toggle("responsive");
     }
 
+    function resizeTableauDashboards() {
+      const wrappers = document.querySelectorAll(".tableau-fit-wrapper");
+
+      wrappers.forEach((wrapper) => {
+        const placeholder = wrapper.querySelector(".tableauPlaceholder");
+        if (!placeholder) return;
+
+        const baseWidth = Number(wrapper.dataset.baseWidth) || 1366;
+        const baseHeight = Number(wrapper.dataset.baseHeight) || 820;
+        const scale = Math.min(wrapper.clientWidth / baseWidth, 1);
+
+        placeholder.style.transform = `scale(${scale})`;
+        wrapper.style.height = `${baseHeight * scale}px`;
+      });
+    }
+
     function loadTableauViz(containerId) {
       const divElement = document.getElementById(containerId);
       if (!divElement) return;
@@ -772,10 +806,10 @@
       const vizElement = divElement.getElementsByTagName("object")[0];
       if (!vizElement) return;
 
-      vizElement.style.width = "100%";
-      vizElement.style.height = "100%";
-      divElement.style.width = "100%";
-      divElement.style.height = "clamp(650px, 78vh, 900px)";
+      vizElement.style.width = "1366px";
+      vizElement.style.height = "820px";
+      divElement.style.width = "1366px";
+      divElement.style.height = "820px";
 
       const scriptElement = document.createElement("script");
       scriptElement.src = "https://public.tableau.com/javascripts/api/viz_v1.js";
@@ -784,6 +818,8 @@
 
     loadTableauViz("britishAirwaysViz");
     loadTableauViz("imdbViz");
+    resizeTableauDashboards();
+    window.addEventListener("resize", resizeTableauDashboards);
   </script>
 </body>
 </html>

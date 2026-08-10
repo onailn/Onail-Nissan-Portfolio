@@ -320,6 +320,10 @@
       transform: translateY(-1px);
     }
 
+    /* ====================================================== */
+    /* POWER BI EMBEDS                                       */
+    /* ====================================================== */
+
     .embed-wrapper {
       width: 100%;
       max-width: 1280px;
@@ -329,11 +333,39 @@
       background-color: #ffffff;
       box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12);
       margin: 24px auto 0;
+      position: relative;
+    }
+
+    /*
+      Employee Attrition report
+      Matches approximately 600 x 373.5
+    */
+    .embed-attrition {
+      aspect-ratio: 600 / 373.5;
+    }
+
+    /*
+      Housing report needs a taller viewing area.
+      If it still feels too short, change 1.45 to 1.35.
+    */
+    .embed-housing {
+      aspect-ratio: 1.45 / 1;
+    }
+
+    /*
+      Crime report is slightly wider.
+      If it still feels cropped, change 1.55 to 1.45.
+    */
+    .embed-crime {
+      aspect-ratio: 1.55 / 1;
     }
 
     .embed-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
       width: 100%;
-      height: clamp(650px, 78vh, 900px);
+      height: 100%;
       border: none;
       display: block;
     }
@@ -341,10 +373,6 @@
     @media (max-width: 900px) {
       .project-grid {
         grid-template-columns: 1fr;
-      }
-
-      .embed-wrapper iframe {
-        height: 650px;
       }
     }
 
@@ -388,10 +416,6 @@
 
       .project-title {
         font-size: 1.45rem;
-      }
-
-      .embed-wrapper iframe {
-        height: 520px;
       }
     }
   </style>
@@ -634,7 +658,6 @@
           View SQL & GitHub
         </a>
 
-
         <a
           class="button-link secondary"
           href="https://www.kaggle.com/datasets/pavansubhasht/ibm-hr-analytics-attrition-dataset"
@@ -643,7 +666,6 @@
         >
           View Kaggle Dataset
         </a>
-
 
         <a
           class="button-link"
@@ -657,7 +679,7 @@
       </div>
 
 
-      <div class="embed-wrapper">
+      <div class="embed-wrapper embed-attrition">
 
         <iframe
           title="Employee Attrition and Retention Analysis"
@@ -784,7 +806,7 @@
       </div>
 
 
-      <div class="embed-wrapper">
+      <div class="embed-wrapper embed-housing">
 
         <iframe
           title="Housing Affordability Analysis"
@@ -923,7 +945,7 @@
       </div>
 
 
-      <div class="embed-wrapper">
+      <div class="embed-wrapper embed-crime">
 
         <iframe
           title="Crime Data in Los Angeles"

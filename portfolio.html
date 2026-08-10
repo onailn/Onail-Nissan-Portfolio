@@ -3,9 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Portfolio - Onail Nissan</title>
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
 
   <style>
     :root {
@@ -24,9 +28,13 @@
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
-      font-family: 'Inter', sans-serif;
+      font-family: "Inter", sans-serif;
       background-color: var(--bg);
       color: var(--text);
       line-height: 1.6;
@@ -131,7 +139,6 @@
       font-size: 0.95rem;
       font-weight: 600;
       text-align: center;
-      clear: both;
     }
 
     .project-card {
@@ -143,6 +150,24 @@
       margin: 0 auto 42px;
       text-align: center;
       width: 100%;
+    }
+
+    .featured-project {
+      border: 2px solid var(--accent);
+      position: relative;
+    }
+
+    .featured-badge {
+      display: inline-block;
+      margin-bottom: 4px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background-color: #dbeafe;
+      color: #1d4ed8;
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
     }
 
     .project-header {
@@ -235,6 +260,7 @@
       color: var(--text);
       font-size: 0.88rem;
       font-weight: 600;
+      margin: 0;
     }
 
     .project-links {
@@ -256,6 +282,7 @@
       border-radius: 10px;
       font-weight: 700;
       font-size: 0.95rem;
+      transition: opacity 0.2s ease, transform 0.2s ease;
     }
 
     .button-link.secondary {
@@ -266,6 +293,7 @@
 
     .button-link:hover {
       opacity: 0.9;
+      transform: translateY(-1px);
     }
 
     .embed-wrapper {
@@ -296,7 +324,7 @@
       overflow: hidden;
       border-radius: 14px;
       border: 1px solid var(--border);
-      background: white;
+      background-color: white;
       box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12);
       position: relative;
     }
@@ -326,7 +354,7 @@
       }
 
       .tableau-scale-wrapper iframe {
-        transform: scale(0.80);
+        transform: scale(0.8);
       }
     }
 
@@ -344,7 +372,7 @@
       }
 
       .tableau-scale-wrapper iframe {
-        transform: scale(0.70);
+        transform: scale(0.7);
       }
     }
 
@@ -389,6 +417,10 @@
       .project-title {
         font-size: 1.45rem;
       }
+
+      .embed-wrapper iframe {
+        height: 520px;
+      }
     }
 
     @media (max-width: 700px) {
@@ -397,7 +429,7 @@
       }
 
       .tableau-scale-wrapper iframe {
-        transform: scale(0.60);
+        transform: scale(0.6);
       }
     }
   </style>
@@ -410,12 +442,20 @@
     <nav class="nav-links" id="navLinks">
       <a href="home.html">Home</a>
       <a href="resume.html">Resume</a>
-      <a href="https://www.linkedin.com/in/onailnissan/" target="_blank">LinkedIn</a>
+
+      <a
+        href="https://www.linkedin.com/in/onailnissan/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        LinkedIn
+      </a>
+
       <a href="portfolio.html">Portfolio</a>
       <a href="about.html">About Me</a>
     </nav>
 
-    <a class="icon" onclick="toggleNav()">☰</a>
+    <a class="icon" href="javascript:void(0);" onclick="toggleNav()">☰</a>
   </header>
 
   <main class="container">
@@ -423,7 +463,10 @@
       <h1>Data Analytics & Dashboard Portfolio</h1>
 
       <p>
-        My portfolio focuses on business intelligence, dashboard development, data cleaning, and data storytelling. These projects show how I turn raw data into clear visuals that help users understand trends, compare performance, and make better decisions.
+        My portfolio focuses on business intelligence, dashboard development,
+        data cleaning, and data storytelling. These projects show how I turn
+        raw data into clear visuals that help users understand trends, compare
+        performance, and make better decisions.
       </p>
 
       <div class="portfolio-tags">
@@ -439,37 +482,166 @@
       </div>
 
       <p class="view-note">
-        Best viewed on a full-size screen. Use fullscreen mode for the best dashboard experience.
+        Best viewed on a full-size screen. Use fullscreen mode for the best
+        dashboard experience.
       </p>
     </section>
 
-    <!-- Capstone Project -->
-    <section class="project-card">
+    <!-- ====================================================== -->
+    <!-- NEW FEATURED EMPLOYEE ATTRITION PROJECT                 -->
+    <!-- ====================================================== -->
+
+    <section class="project-card featured-project">
       <div class="project-header">
-        <span class="project-kicker">Capstone Project</span>
-        <h2 class="project-title">Housing Affordability Analysis - Peoria, Arizona</h2>
+        <span class="featured-badge">Newest Project</span>
+
+        <span class="project-kicker">Power BI · HR Analytics</span>
+
+        <h2 class="project-title">
+          Employee Attrition & Retention Analysis
+        </h2>
+
         <p class="project-description">
-          This Power BI dashboard analyzes housing affordability in Peoria, Arizona, with a focus on how home values changed compared to household income over time. The dashboard was created to show whether income growth kept pace with rising home prices.
+          This three-page Power BI report analyzes employee turnover, compares
+          attrition across departments and job roles, and identifies high-risk
+          employee segments. It turns workforce data into focused
+          recommendations that can help HR leaders improve retention.
         </p>
       </div>
 
       <div class="project-grid">
         <div class="info-box">
           <h3>Business Question</h3>
-          <p>Are homes becoming less affordable in Peoria, Arizona because median home values are increasing faster than median household income?</p>
+
+          <p>
+            Which employee groups have the highest attrition rates, what
+            factors are associated with turnover, and where should HR focus
+            its retention efforts?
+          </p>
         </div>
 
         <div class="info-box">
           <h3>Key Insights</h3>
+
           <ul>
-            <li>Median home values increased faster than household income over the analysis period.</li>
-            <li>The affordability ratio shows that homes became more expensive compared to local income.</li>
-            <li>The dashboard highlights the growing gap between income and home prices.</li>
+            <li>
+              237 of 1,470 employees left the company, producing an overall
+              attrition rate of approximately 16.1%.
+            </li>
+
+            <li>
+              Employees working overtime with low job satisfaction had the
+              highest segment attrition rate at approximately 36.6%.
+            </li>
+
+            <li>
+              Employees with low income and short tenure also showed elevated
+              turnover risk.
+            </li>
           </ul>
         </div>
 
         <div class="info-box">
           <h3>Skills & Techniques Used</h3>
+
+          <ul class="skills-list">
+            <li>Power BI</li>
+            <li>Power Query</li>
+            <li>DAX Measures</li>
+            <li>HR Analytics</li>
+            <li>Employee Segmentation</li>
+            <li>Attrition Analysis</li>
+            <li>Data Storytelling</li>
+          </ul>
+        </div>
+
+        <div class="info-box">
+          <h3>Business Value</h3>
+
+          <p>
+            The report helps HR leaders identify high-risk employee groups and
+            prioritize retention strategies around overtime, job satisfaction,
+            compensation, and early-tenure support.
+          </p>
+        </div>
+      </div>
+
+      <div class="project-links">
+        <a
+          class="button-link"
+          href="https://app.powerbi.com/view?r=eyJrIjoiZjYyYWMzYjAtYzIyMS00ZDYxLTg1YmQtMzcwMmZhZmUyMmUzIiwidCI6IjhhNWI2ZmQyLWY1MGQtNDU2NS05MTBhLTFmZmU2NDU0ZTM2OCIsImMiOjZ9"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Open Power BI Dashboard
+        </a>
+      </div>
+
+      <div class="embed-wrapper">
+        <iframe
+          title="Employee Attrition and Retention Analysis"
+          src="https://app.powerbi.com/view?r=eyJrIjoiZjYyYWMzYjAtYzIyMS00ZDYxLTg1YmQtMzcwMmZhZmUyMmUzIiwidCI6IjhhNWI2ZmQyLWY1MGQtNDU2NS05MTBhLTFmZmU2NDU0ZTM2OCIsImMiOjZ9&amp;filterPaneEnabled=false&amp;navContentPaneEnabled=false&amp;pageView=fitToWidth"
+          loading="lazy"
+          allowfullscreen="true"
+        ></iframe>
+      </div>
+    </section>
+
+    <!-- ====================================================== -->
+    <!-- HOUSING AFFORDABILITY PROJECT                          -->
+    <!-- ====================================================== -->
+
+    <section class="project-card">
+      <div class="project-header">
+        <span class="project-kicker">Capstone Project</span>
+
+        <h2 class="project-title">
+          Housing Affordability Analysis - Peoria, Arizona
+        </h2>
+
+        <p class="project-description">
+          This Power BI dashboard analyzes housing affordability in Peoria,
+          Arizona, with a focus on how home values changed compared to
+          household income over time. The dashboard was created to show
+          whether income growth kept pace with rising home prices.
+        </p>
+      </div>
+
+      <div class="project-grid">
+        <div class="info-box">
+          <h3>Business Question</h3>
+
+          <p>
+            Are homes becoming less affordable in Peoria, Arizona because
+            median home values are increasing faster than median household
+            income?
+          </p>
+        </div>
+
+        <div class="info-box">
+          <h3>Key Insights</h3>
+
+          <ul>
+            <li>
+              Median home values increased faster than household income over
+              the analysis period.
+            </li>
+
+            <li>
+              The affordability ratio shows that homes became more expensive
+              compared to local income.
+            </li>
+
+            <li>
+              The dashboard highlights the growing gap between income and home
+              prices.
+            </li>
+          </ul>
+        </div>
+
+        <div class="info-box">
+          <h3>Skills & Techniques Used</h3>
+
           <ul class="skills-list">
             <li>Power BI</li>
             <li>Power Query</li>
@@ -483,46 +655,75 @@
 
         <div class="info-box">
           <h3>Business Value</h3>
-          <p>This dashboard helps users understand how affordability changes over time and supports a clearer discussion about housing pressure, income growth, and long-term financial planning.</p>
+
+          <p>
+            This dashboard helps users understand how affordability changes
+            over time and supports a clearer discussion about housing
+            pressure, income growth, and long-term financial planning.
+          </p>
         </div>
       </div>
 
       <div class="embed-wrapper">
         <iframe
           title="Housing Affordability Analysis"
-          src="https://app.powerbi.com/view?r=eyJrIjoiMzY2ZDJjNjktYzMyMC00OTEyLWE3MWQtMTE2ZGZlMTJkODQxIiwidCI6IjhhNWI2ZmQyLWY1MGQtNDU2NS05MTBhLTFmZmU2NDU0ZTM2OCIsImMiOjZ9&filterPaneEnabled=false&navContentPaneEnabled=false&pageView=fitToWidth"
-          allowfullscreen="true">
-        </iframe>
+          src="https://app.powerbi.com/view?r=eyJrIjoiMzY2ZDJjNjktYzMyMC00OTEyLWE3MWQtMTE2ZGZlMTJkODQxIiwidCI6IjhhNWI2ZmQyLWY1MGQtNDU2NS05MTBhLTFmZmU2NDU0ZTM2OCIsImMiOjZ9&amp;filterPaneEnabled=false&amp;navContentPaneEnabled=false&amp;pageView=fitToWidth"
+          loading="lazy"
+          allowfullscreen="true"
+        ></iframe>
       </div>
     </section>
 
-    <!-- Crime Project -->
+    <!-- ====================================================== -->
+    <!-- LOS ANGELES CRIME PROJECT                              -->
+    <!-- ====================================================== -->
+
     <section class="project-card">
       <div class="project-header">
         <span class="project-kicker">Power BI Project</span>
+
         <h2 class="project-title">Crime in Los Angeles Dashboard</h2>
+
         <p class="project-description">
-          This Power BI dashboard explores Los Angeles crime data from 2020 to 2024. It allows users to filter by year, month, time of day, location, and other categories to better understand crime patterns.
+          This Power BI dashboard explores Los Angeles crime data from 2020 to
+          2024. It allows users to filter by year, month, time of day, location,
+          and other categories to better understand crime patterns.
         </p>
       </div>
 
       <div class="project-grid">
         <div class="info-box">
           <h3>Business Question</h3>
-          <p>When and where are crimes happening most often, and what patterns can be found by time of day, crime type, and location?</p>
+
+          <p>
+            When and where are crimes happening most often, and what patterns
+            can be found by time of day, crime type, and location?
+          </p>
         </div>
 
         <div class="info-box">
           <h3>Key Insights</h3>
+
           <ul>
-            <li>Time-of-day filters help identify when crime activity is highest.</li>
-            <li>Crime hotspots help users understand which areas may need more attention.</li>
-            <li>Weapon and crime type breakdowns provide more context behind the incidents.</li>
+            <li>
+              Time-of-day filters help identify when crime activity is highest.
+            </li>
+
+            <li>
+              Crime hotspots help users understand which areas may need more
+              attention.
+            </li>
+
+            <li>
+              Weapon and crime type breakdowns provide more context behind the
+              incidents.
+            </li>
           </ul>
         </div>
 
         <div class="info-box">
           <h3>Skills & Techniques Used</h3>
+
           <ul class="skills-list">
             <li>Power BI</li>
             <li>Data Cleaning</li>
@@ -536,51 +737,100 @@
 
         <div class="info-box">
           <h3>Business Value</h3>
-          <p>This dashboard helps users quickly identify crime patterns by location, time, and incident type. These insights can support public safety reporting, resource planning, and clearer communication of crime trends to non-technical users.</p>
+
+          <p>
+            This dashboard helps users quickly identify crime patterns by
+            location, time, and incident type. These insights can support
+            public safety reporting, resource planning, and clearer
+            communication of crime trends to non-technical users.
+          </p>
         </div>
       </div>
 
       <div class="project-links">
-        <a class="button-link secondary" href="https://catalog.data.gov/dataset/crime-data-from-2020-to-present" target="_blank">View Data Source</a>
-        <a class="button-link" href="https://app.powerbi.com/view?r=eyJrIjoiY2U0NzQyNmItNDQyNy00NzMxLWI4YTMtN2U1MWVkMGFjMjYxIiwidCI6IjhhNWI2ZmQyLWY1MGQtNDU2NS05MTBhLTFmZmU2NDU0ZTM2OCIsImMiOjZ9&pageName=ca1841dadeb53f61113c" target="_blank">Open Power BI Dashboard</a>
+        <a
+          class="button-link secondary"
+          href="https://catalog.data.gov/dataset/crime-data-from-2020-to-present"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          View Data Source
+        </a>
+
+        <a
+          class="button-link"
+          href="https://app.powerbi.com/view?r=eyJrIjoiY2U0NzQyNmItNDQyNy00NzMxLWI4YTMtN2U1MWVkMGFjMjYxIiwidCI6IjhhNWI2ZmQyLWY1MGQtNDU2NS05MTBhLTFmZmU2NDU0ZTM2OCIsImMiOjZ9&amp;pageName=ca1841dadeb53f61113c"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Open Power BI Dashboard
+        </a>
       </div>
 
       <div class="embed-wrapper">
         <iframe
-          title="Crime Data In LA"
-          src="https://app.powerbi.com/view?r=eyJrIjoiY2U0NzQyNmItNDQyNy00NzMxLWI4YTMtN2U1MWVkMGFjMjYxIiwidCI6IjhhNWI2ZmQyLWY1MGQtNDU2NS05MTBhLTFmZmU2NDU0ZTM2OCIsImMiOjZ9&pageName=ca1841dadeb53f61113c&filterPaneEnabled=false&navContentPaneEnabled=false&pageView=fitToWidth"
-          allowfullscreen="true">
-        </iframe>
+          title="Crime Data in Los Angeles"
+          src="https://app.powerbi.com/view?r=eyJrIjoiY2U0NzQyNmItNDQyNy00NzMxLWI4YTMtN2U1MWVkMGFjMjYxIiwidCI6IjhhNWI2ZmQyLWY1MGQtNDU2NS05MTBhLTFmZmU2NDU0ZTM2OCIsImMiOjZ9&amp;pageName=ca1841dadeb53f61113c&amp;filterPaneEnabled=false&amp;navContentPaneEnabled=false&amp;pageView=fitToWidth"
+          loading="lazy"
+          allowfullscreen="true"
+        ></iframe>
       </div>
     </section>
 
-    <!-- British Airways Project -->
+    <!-- ====================================================== -->
+    <!-- BRITISH AIRWAYS PROJECT                                -->
+    <!-- ====================================================== -->
+
     <section class="project-card">
       <div class="project-header">
         <span class="project-kicker">Tableau Project</span>
-        <h2 class="project-title">British Airways Review Dashboard</h2>
+
+        <h2 class="project-title">
+          British Airways Review Dashboard
+        </h2>
+
         <p class="project-description">
-          This Tableau dashboard analyzes British Airways customer review data. It helps users compare ratings by category, location, aircraft type, and review trends.
+          This Tableau dashboard analyzes British Airways customer review
+          data. It helps users compare ratings by category, location, aircraft
+          type, and review trends.
         </p>
       </div>
 
       <div class="project-grid">
         <div class="info-box">
           <h3>Business Question</h3>
-          <p>What areas of the British Airways customer experience are rated highest or lowest, and where should the airline focus improvement efforts?</p>
+
+          <p>
+            What areas of the British Airways customer experience are rated
+            highest or lowest, and where should the airline focus improvement
+            efforts?
+          </p>
         </div>
 
         <div class="info-box">
           <h3>Key Insights</h3>
+
           <ul>
-            <li>Average rating visuals help compare customer satisfaction across different categories.</li>
-            <li>Location and aircraft filters allow users to explore patterns in review scores.</li>
-            <li>Ratings help identify service areas that may influence the overall travel experience.</li>
+            <li>
+              Average rating visuals help compare customer satisfaction across
+              different categories.
+            </li>
+
+            <li>
+              Location and aircraft filters allow users to explore patterns in
+              review scores.
+            </li>
+
+            <li>
+              Ratings help identify service areas that may influence the
+              overall travel experience.
+            </li>
           </ul>
         </div>
 
         <div class="info-box">
           <h3>Skills & Techniques Used</h3>
+
           <ul class="skills-list">
             <li>Tableau</li>
             <li>Data Visualization</li>
@@ -593,54 +843,102 @@
 
         <div class="info-box">
           <h3>Business Value</h3>
-          <p>This dashboard helps summarize customer review patterns so airline teams can better understand satisfaction drivers, compare performance by category, and identify areas that may impact the customer travel experience.</p>
+
+          <p>
+            This dashboard helps summarize customer review patterns so airline
+            teams can better understand satisfaction drivers, compare
+            performance by category, and identify areas that may impact the
+            customer travel experience.
+          </p>
         </div>
       </div>
 
       <div class="project-links">
-        <a class="button-link secondary" href="https://github.com/onailn/Project-2-British-Airways-Data" target="_blank">View Data Source</a>
-        <a class="button-link" href="https://public.tableau.com/views/BritishAirwaysReview_17513272511620/Dashboard" target="_blank">Open Tableau Dashboard</a>
+        <a
+          class="button-link secondary"
+          href="https://github.com/onailn/Project-2-British-Airways-Data"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          View Data Source
+        </a>
+
+        <a
+          class="button-link"
+          href="https://public.tableau.com/views/BritishAirwaysReview_17513272511620/Dashboard"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Open Tableau Dashboard
+        </a>
       </div>
 
       <div class="tableau-scale-wrapper">
         <iframe
           title="British Airways Tableau Dashboard"
-          src="https://public.tableau.com/views/BritishAirwaysReview_17513272511620/Dashboard?:showVizHome=no&:embed=true&:toolbar=no"
+          src="https://public.tableau.com/views/BritishAirwaysReview_17513272511620/Dashboard?:showVizHome=no&amp;:embed=true&amp;:toolbar=no"
           width="1366"
           height="850"
-          frameborder="0"
-          allowfullscreen>
-        </iframe>
+          loading="lazy"
+          allowfullscreen
+        ></iframe>
       </div>
     </section>
 
-    <!-- IMDb Project -->
+    <!-- ====================================================== -->
+    <!-- IMDB PROJECT                                           -->
+    <!-- ====================================================== -->
+
     <section class="project-card">
       <div class="project-header">
         <span class="project-kicker">Tableau Project</span>
-        <h2 class="project-title">IMDb Top 300 Movies Dashboard</h2>
+
+        <h2 class="project-title">
+          IMDb Top 300 Movies Dashboard
+        </h2>
+
         <p class="project-description">
-          This Tableau dashboard explores IMDb's Top 300 Movies by genre, rating, director, and release year. The goal is to identify patterns in highly rated films and make the movie data easier to compare visually.
+          This Tableau dashboard explores IMDb's Top 300 Movies by genre,
+          rating, director, and release year. The goal is to identify patterns
+          in highly rated films and make the movie data easier to compare
+          visually.
         </p>
       </div>
 
       <div class="project-grid">
         <div class="info-box">
           <h3>Business Question</h3>
-          <p>What genres, directors, and time periods are most common among IMDb's top-rated movies?</p>
+
+          <p>
+            What genres, directors, and time periods are most common among
+            IMDb's top-rated movies?
+          </p>
         </div>
 
         <div class="info-box">
           <h3>Key Insights</h3>
+
           <ul>
-            <li>Genre breakdowns show which movie categories appear most often in the Top 300 list.</li>
-            <li>Director analysis helps identify creators with multiple highly rated films.</li>
-            <li>Rating and release-year visuals make it easier to compare movie patterns over time.</li>
+            <li>
+              Genre breakdowns show which movie categories appear most often
+              in the Top 300 list.
+            </li>
+
+            <li>
+              Director analysis helps identify creators with multiple highly
+              rated films.
+            </li>
+
+            <li>
+              Rating and release-year visuals make it easier to compare movie
+              patterns over time.
+            </li>
           </ul>
         </div>
 
         <div class="info-box">
           <h3>Skills & Techniques Used</h3>
+
           <ul class="skills-list">
             <li>Tableau</li>
             <li>Data Cleaning</li>
@@ -653,54 +951,100 @@
 
         <div class="info-box">
           <h3>Business Value</h3>
-          <p>This dashboard turns movie ranking data into an easy-to-read visual summary. It helps users compare genres, ratings, directors, and time periods to better understand patterns among highly rated films.</p>
+
+          <p>
+            This dashboard turns movie ranking data into an easy-to-read visual
+            summary. It helps users compare genres, ratings, directors, and
+            time periods to better understand patterns among highly rated
+            films.
+          </p>
         </div>
       </div>
 
       <div class="project-links">
-        <a class="button-link secondary" href="https://www.imdb.com/list/ls008018223/" target="_blank">View IMDb Source</a>
-        <a class="button-link" href="https://public.tableau.com/views/IMD_17519323921720/Dashboard1" target="_blank">Open Tableau Dashboard</a>
+        <a
+          class="button-link secondary"
+          href="https://www.imdb.com/list/ls008018223/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          View IMDb Source
+        </a>
+
+        <a
+          class="button-link"
+          href="https://public.tableau.com/views/IMD_17519323921720/Dashboard1"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Open Tableau Dashboard
+        </a>
       </div>
 
       <div class="tableau-scale-wrapper">
         <iframe
           title="IMDb Tableau Dashboard"
-          src="https://public.tableau.com/views/IMD_17519323921720/Dashboard1?:showVizHome=no&:embed=true&:toolbar=no"
+          src="https://public.tableau.com/views/IMD_17519323921720/Dashboard1?:showVizHome=no&amp;:embed=true&amp;:toolbar=no"
           width="1366"
           height="850"
-          frameborder="0"
-          allowfullscreen>
-        </iframe>
+          loading="lazy"
+          allowfullscreen
+        ></iframe>
       </div>
     </section>
 
-    <!-- HR Project -->
+    <!-- ====================================================== -->
+    <!-- ORIGINAL HR ANALYTICS PROJECT                          -->
+    <!-- ====================================================== -->
+
     <section class="project-card">
       <div class="project-header">
         <span class="project-kicker">Power BI Project</span>
+
         <h2 class="project-title">HR Analytics Dashboard</h2>
+
         <p class="project-description">
-          This Power BI dashboard explores workplace data using employee demographics, tenure, job roles, departments, training activity, and other workforce metrics. The dashboard is designed to help HR users understand employee trends and support workforce planning.
+          This Power BI dashboard explores workplace data using employee
+          demographics, tenure, job roles, departments, training activity, and
+          other workforce metrics. The dashboard is designed to help HR users
+          understand employee trends and support workforce planning.
         </p>
       </div>
 
       <div class="project-grid">
         <div class="info-box">
           <h3>Business Question</h3>
-          <p>What employee patterns can HR leaders identify across tenure, departments, job roles, education, and training activity?</p>
+
+          <p>
+            What employee patterns can HR leaders identify across tenure,
+            departments, job roles, education, and training activity?
+          </p>
         </div>
 
         <div class="info-box">
           <h3>Key Insights</h3>
+
           <ul>
-            <li>Tenure analysis helps show which roles or employee groups stay longer.</li>
-            <li>Department and job title filters allow HR users to compare workforce patterns.</li>
-            <li>Training data helps show how employee development activity varies across groups.</li>
+            <li>
+              Tenure analysis helps show which roles or employee groups stay
+              longer.
+            </li>
+
+            <li>
+              Department and job title filters allow HR users to compare
+              workforce patterns.
+            </li>
+
+            <li>
+              Training data helps show how employee development activity varies
+              across groups.
+            </li>
           </ul>
         </div>
 
         <div class="info-box">
           <h3>Skills & Techniques Used</h3>
+
           <ul class="skills-list">
             <li>Power BI</li>
             <li>Data Cleaning</li>
@@ -714,52 +1058,106 @@
 
         <div class="info-box">
           <h3>Business Value</h3>
-          <p>This dashboard demonstrates how HR data can be turned into a clear story for leaders. It can support conversations about retention, recruiting, employee development, and workforce planning.</p>
+
+          <p>
+            This dashboard demonstrates how HR data can be turned into a clear
+            story for leaders. It can support conversations about retention,
+            recruiting, employee development, and workforce planning.
+          </p>
         </div>
       </div>
 
       <div class="project-links">
-        <a class="button-link secondary" href="https://www.kaggle.com/datasets/saadharoon27/hr-analytics-dataset" target="_blank">View Data Source</a>
-        <a class="button-link" href="https://app.powerbi.com/view?r=eyJrIjoiOWEyOGRiYWQtZjQ1Mi00NTU0LWEyNmEtMjRlMWUwYjQ5M2ZiIiwidCI6IjhhNWI2ZmQyLWY1MGQtNDU2NS05MTBhLTFmZmU2NDU0ZTM2OCIsImMiOjZ9" target="_blank">Open Power BI Dashboard</a>
+        <a
+          class="button-link secondary"
+          href="https://www.kaggle.com/datasets/saadharoon27/hr-analytics-dataset"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          View Data Source
+        </a>
+
+        <a
+          class="button-link"
+          href="https://app.powerbi.com/view?r=eyJrIjoiOWEyOGRiYWQtZjQ1Mi00NTU0LWEyNmEtMjRlMWUwYjQ5M2ZiIiwidCI6IjhhNWI2ZmQyLWY1MGQtNDU2NS05MTBhLTFmZmU2NDU0ZTM2OCIsImMiOjZ9"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Open Power BI Dashboard
+        </a>
       </div>
 
       <div class="embed-wrapper">
         <iframe
-          title="HR-Dashboard"
-          src="https://app.powerbi.com/view?r=eyJrIjoiOWEyOGRiYWQtZjQ1Mi00NTU0LWEyNmEtMjRlMWUwYjQ5M2ZiIiwidCI6IjhhNWI2ZmQyLWY1MGQtNDU2NS05MTBhLTFmZmU2NDU0ZTM2OCIsImMiOjZ9&filterPaneEnabled=false&navContentPaneEnabled=false&pageView=fitToWidth"
-          allowfullscreen="true">
-        </iframe>
+          title="HR Analytics Dashboard"
+          src="https://app.powerbi.com/view?r=eyJrIjoiOWEyOGRiYWQtZjQ1Mi00NTU0LWEyNmEtMjRlMWUwYjQ5M2ZiIiwidCI6IjhhNWI2ZmQyLWY1MGQtNDU2NS05MTBhLTFmZmU2NDU0ZTM2OCIsImMiOjZ9&amp;filterPaneEnabled=false&amp;navContentPaneEnabled=false&amp;pageView=fitToWidth"
+          loading="lazy"
+          allowfullscreen="true"
+        ></iframe>
       </div>
     </section>
 
-    <!-- Portfolio Approach -->
+    <!-- ====================================================== -->
+    <!-- PORTFOLIO APPROACH                                     -->
+    <!-- ====================================================== -->
+
     <section class="project-card">
       <div class="project-header">
         <span class="project-kicker">Portfolio Approach</span>
-        <h2 class="project-title">Business Intelligence & Data Storytelling Focus</h2>
+
+        <h2 class="project-title">
+          Business Intelligence & Data Storytelling Focus
+        </h2>
+
         <p class="project-description">
-          Across my dashboard projects, I focus on turning data into clear business stories. My goal is to help users understand what is happening, why it matters, and how the insight can support better decisions.
+          Across my dashboard projects, I focus on turning data into clear
+          business stories. My goal is to help users understand what is
+          happening, why it matters, and how the insight can support better
+          decisions.
         </p>
       </div>
 
       <div class="project-grid">
         <div class="info-box">
           <h3>Business Intelligence Practices</h3>
+
           <ul>
             <li>Clean and prepare raw data for reporting.</li>
-            <li>Create interactive dashboards that answer business questions.</li>
-            <li>Use KPIs, filters, and visuals to make trends easier to understand.</li>
-            <li>Translate data into insights that business users can act on.</li>
+
+            <li>
+              Create interactive dashboards that answer business questions.
+            </li>
+
+            <li>
+              Use KPIs, filters, and visuals to make trends easier to
+              understand.
+            </li>
+
+            <li>
+              Translate data into insights that business users can act on.
+            </li>
           </ul>
         </div>
 
         <div class="info-box">
           <h3>Data Storytelling Practices</h3>
+
           <ul>
-            <li>Start each project with the main question being answered.</li>
-            <li>Highlight the most important insights from the data.</li>
-            <li>Explain what the dashboard shows in simple business terms.</li>
-            <li>Connect visuals to decisions, outcomes, and next steps.</li>
+            <li>
+              Start each project with the main question being answered.
+            </li>
+
+            <li>
+              Highlight the most important insights from the data.
+            </li>
+
+            <li>
+              Explain what the dashboard shows in simple business terms.
+            </li>
+
+            <li>
+              Connect visuals to decisions, outcomes, and next steps.
+            </li>
           </ul>
         </div>
       </div>
@@ -768,7 +1166,9 @@
 
   <script>
     function toggleNav() {
-      document.getElementById("navLinks").classList.toggle("responsive");
+      document
+        .getElementById("navLinks")
+        .classList.toggle("responsive");
     }
   </script>
 </body>
